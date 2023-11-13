@@ -7,7 +7,6 @@ let start = moment().subtract(29, "days");
 let end = moment();
 
 function fetchData(start, end) {
-    console.log("fetch data 날짜", start, end);
     const scheduleData = JSON.parse(localStorage.getItem("schedule"));
     const dataArr = {};
     if (!scheduleData) return;
@@ -109,7 +108,6 @@ function addSchdule(e) {
         if (!wholeData["dates"][dateInfo]) {
             wholeData["dates"][dateInfo] = [];
         }
-        console.log("확인", wholeData["dates"]);
         wholeData["dates"][dateInfo].push(addData);
         localStorage.setItem("schedule", JSON.stringify(wholeData));
     } else {
@@ -118,14 +116,22 @@ function addSchdule(e) {
         localStorage.setItem("schedule", JSON.stringify(wholeData));
     }
 
+    // 현재 지정된 날짜의 일정 새로고침
+    refreshSchdule(start, end);
+
     // 로컬 스토리지에 저장 후 닫기
     $modalEl.hide();
     $(".modal-backdrop").remove();
 }
 
+function refreshSchdule(startDate, endDate) {
+    $mainEl.html("");
+    fetchData(startDate, endDate);
+}
+
 // 스케줄 범위 설정 완료시 이벤트
 $("#reportrange").on("apply.daterangepicker", function (ev, picker) {
-    console.log("확인", start, end);
+    refreshSchdule(picker.startDate, picker.endDate);
 });
 
 // 스케줄 추가하기 버튼 클릭시 이벤트
