@@ -22,7 +22,8 @@ function fetchData(start, end) {
     for (const selectDate in dataArr) {
         const sectionEl = document.createElement("section");
         const olEl = document.createElement("ol");
-        sectionEl.classList.add("w-7/12", "m-auto");
+
+        sectionEl.classList.add("w-7/12", "m-auto", "mb-12");
         olEl.classList.add(
             "relative",
             "border-l",
@@ -32,7 +33,7 @@ function fetchData(start, end) {
 
         sectionEl.insertAdjacentHTML(
             "beforeend",
-            `<h2 class="text-2xl mb-4 font-extrabold dark:text-white">${selectDate}</h2>`
+            `<h2 class="text-2xl mb-6 font-extrabold dark:text-white">${selectDate}</h2>`
         );
 
         dataArr[selectDate].forEach((data, i) => {
@@ -129,6 +130,17 @@ function refreshSchdule(startDate, endDate) {
     fetchData(startDate, endDate);
 }
 
+function resizeScreen() {
+    const mediaQuery = window.matchMedia("(max-width: 450px)");
+    const $plusBtnText = $(".plus_text");
+
+    if (mediaQuery.matches) {
+        $plusBtnText.css("display", "none");
+    } else {
+        $plusBtnText.css("display", "inline");
+    }
+}
+
 // 스케줄 범위 설정 완료시 이벤트
 $("#reportrange").on("apply.daterangepicker", function (ev, picker) {
     refreshSchdule(picker.startDate, picker.endDate);
@@ -142,6 +154,9 @@ $modalEl.on("click", (e) => closeModal(e));
 
 // 스케줄 추가하기
 $formEl.on("submit", (e) => addSchdule(e));
+
+// 화면 리사이징시
+window.addEventListener("resize", resizeScreen);
 
 $(function () {
     function cb(start, end) {
