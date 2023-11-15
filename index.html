@@ -14,9 +14,13 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 </head>
 
-<body>
+<body class="flex flex-col h-screen min-w-[400px]">
     <header>
-        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-center">Schedule</h1>
+        <h1
+            class="flex text-4xl justify-center gap-4 my-4 font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            <img src="assets/calendar.svg" alt="캘린더 아이콘" class="icon w-8 md:w-10 lg:w-12 h-auto" />
+            Planner
+        </h1>
         <div class="flex items-center justify-between px-8 my-8 md:px-16">
             <div id="reportrange"
                 class="flex items-center bg-white cursor-pointer py-1 px-2 border-solid border border-[#ccc]">
@@ -32,7 +36,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="flex-auto">
     </main>
 
     <!-- Main modal -->
