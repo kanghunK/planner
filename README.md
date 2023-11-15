@@ -8,4 +8,4 @@
 - 일정에 대한 정보를 로컬 스토리지에 저장해서 탭을 닫은 후에도 저장된 정보가 유지됩니다.
 
 ### :link: 접속 링크
-
+- [https://kanghunk.github.io/planner/](https://kanghunk.github.io/planner/)
