@@ -166,7 +166,7 @@ function resizeScreen() {
 
 function loadNoSchdule() {
     $mainEl.html(
-        '<div class="flex flex-col justify-center items-center h-full gap-8 text-center"><img class="w-[200px]" src="/assets/no_schedule.png" alt="일정 없음" /><p>등록된 일정이 없습니다.</p></div>'
+        '<div class="flex flex-col justify-center items-center h-full gap-8 text-center"><img class="w-[200px]" src="./assets/no_schedule.png" alt="일정 없음" /><p>등록된 일정이 없습니다.</p></div>'
     );
 }
 
