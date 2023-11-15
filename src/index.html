@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>planner</title>
+    <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <link rel="stylesheet" href="global.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -18,19 +17,19 @@
     <header>
         <h1
             class="flex text-4xl justify-center gap-4 my-4 font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            <img src="assets/calendar.svg" alt="캘린더 아이콘" class="icon w-8 md:w-10 lg:w-12 h-auto" />
+            <img src="/assets/calendar.svg" alt="캘린더 아이콘" class="icon w-8 md:w-10 lg:w-12 h-auto" />
             Planner
         </h1>
         <div class="flex items-center justify-between px-8 my-8 md:px-16">
             <div id="reportrange"
                 class="flex items-center bg-white cursor-pointer py-1 px-2 border-solid border border-[#ccc]">
-                <img src="assets/calendar.svg" alt="캘린더 아이콘" class="icon" />&nbsp;
-                <span></span><img src="assets/caret-down.svg" alt="아래화살표 아이콘" class="icon" />
+                <img src="/assets/calendar.svg" alt="캘린더 아이콘" class="icon" />&nbsp;
+                <span></span><img src="/assets/caret-down.svg" alt="아래화살표 아이콘" class="icon" />
             </div>
             <div class="plus">
                 <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
                     class="flex items-center p-2 text-gray-950 border border-solid border-[#e5e7eb] rounded-md hover:bg-gray-50">
-                    <img src="assets/plus.svg" alt="더하기 아이콘">
+                    <img src="/assets/plus.svg" alt="더하기 아이콘">
                     <span class="plus_text">&nbsp;추가하기</span>
                 </button>
             </div>
@@ -86,8 +85,7 @@
             </div>
         </div>
     </div>
-
-    <script src="js_file/loadSchedule.js"></script>
+    <script src="/js_file/loadSchedule.js"></script>
 </body>
 
 </html>
